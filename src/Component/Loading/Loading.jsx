@@ -5,7 +5,7 @@ export default function Loading() {
 
 
     return <>
-        <div className='flex fixed items-center justify-center top-0 bottom-0 left-0 right-0 bg-white'>
+        <div className='flex fixed items-center justify-center top-0 bottom-0 left-0 right-0 bg-white z-50'>
             <Bars
                 height="80"
                 width="80"

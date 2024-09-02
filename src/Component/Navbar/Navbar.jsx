@@ -17,7 +17,7 @@ export default function Navbar() {
                 </ul>
                 <div className='mt-5 h-[2px] bg-gray-200 hidden lg:block' />
             </div>
-            <Link to={'search'}><i className="fa-solid fa-magnifying-glass text-pink-500 text-2xl ms-[-25px] mt-3 relative z-50"></i></Link>
+            <Link to={'search'}><i className="fa-solid fa-magnifying-glass text-pink-500 text-2xl ms-[-25px] mt-3 relative z-20"></i></Link>
         </nav>
 
 

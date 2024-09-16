@@ -18,11 +18,11 @@ export default function Header() {
         arrows: true,
     }
     return <>
-        <div className='w-full relative overflow-hidden'>
+        <div className='w-full h-screen relative overflow-hidden'>
             <Slider {...settings} className='overflow-hidden'>
                 {popularData?.map((item) => <div className='relative' key={item.id}>
                     <div>
-                        <img src={`https://image.tmdb.org/t/p/original` + item.backdrop_path} className='object-cover w-full h-[800px] object-top' alt={item.title +' image'}/>
+                        <img src={`https://image.tmdb.org/t/p/original` + item.backdrop_path} className='object-cover w-full h-screen object-top' alt={item.title +' image'}/>
                     </div>
                     <div className='container  lg:p-10 absolute lg:bottom-0  lg:left-20 bottom-1/2 left-1/2 translate-x-[-50%] translate-y-1/2 flex flex-col items-center lg:block lg:translate-x-0 lg:translate-y-0'>
                         <h2 className='text-4xl text-white uppercase text-center lg:text-start'>{item.title}</h2>
@@ -44,9 +44,6 @@ export default function Header() {
             </div >
 
         </div>
-
-
-
     </>
 }
 

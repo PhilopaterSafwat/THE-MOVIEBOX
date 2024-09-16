@@ -9,7 +9,7 @@ export default function Card({ data, index }) {
             <Fade>
                 <Link to={`/movieDetails/${data.id}`}>
                     <div className='min-h-[390px]'>
-                        <img src={`https://image.tmdb.org/t/p/original` + data?.poster_path} className='w-full md:h-[390px]' alt={data?.title} />
+                        <img loading='lazy' src={`https://image.tmdb.org/t/p/original` + data?.poster_path} className='w-full md:h-[390px]' alt={data?.title} />
                     </div>
                 </Link>
                 <div className='info flex items-center justify-between p-4 shadow-lg'>

@@ -1,16 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import style from './Card.module.css'
 import { Link } from 'react-router-dom'
 import { AttentionSeeker, Fade, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import Loading from '../Loading/Loading'
 export default function Card({ data, index }) {
-    
+    const [imageStyle, setimageStyle] = useState({ opacity: 0 })
+
+    const ImageLoad = (e) => {
+        setimageStyle({})
+    }
     return <>
         <div className='w-full p-5 md:w-1/2 lg:w-1/3 xl:w-1/4 hover:scale-110 transation-mine flex flex-col'>
             <Fade>
                 <Link to={`/movieDetails/${data.id}`}>
-                    <div className='min-h-[390px]'>
+                    {/* <div className='min-h-[390px]'>
                         <img loading='lazy' src={`https://image.tmdb.org/t/p/original` + data?.poster_path} className='w-full md:h-[390px]' alt={data?.title} />
-                    </div>
+                    </div> */}
+                    <LazyLoadImage
+                        alt={data.title}
+                        className='w-full md:h-[390px]'
+                        src={`https://image.tmdb.org/t/p/original` + data.poster_path}
+                        effect='opacity'
+                        width={`100%`}
+                        style={imageStyle}
+                        onLoad={ImageLoad}
+                    />
                 </Link>
                 <div className='info flex items-center justify-between p-4 shadow-lg'>
                     <div>

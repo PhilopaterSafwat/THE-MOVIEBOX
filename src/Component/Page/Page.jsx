@@ -10,8 +10,11 @@ export default function Page() {
     let [nummm, setnummm] = useState()
     let navigate = useNavigate()
     let prams = useParams()
+    const { setnav } = useContext(APIContext)
     const [pageRange, setPageRange] = useState(5)
     useEffect(() => {
+        setnav(true)
+        getPopular()
         setnummm(prams.id);
         Page('https://api.themoviedb.org/3/trending/movie/week',prams.id)
     }, [prams.id])

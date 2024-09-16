@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import { APIContext } from '../../Context/Apicontext'
 import Loading from '../Loading/Loading'
 
+
 export default function MovieDetails() {
     let { id } = useParams()
     let { getDetails, Details } = useContext(APIContext)
@@ -14,7 +15,7 @@ export default function MovieDetails() {
 
     return <>
         {!Details?.backdrop_path ? <Loading /> : <>
-            <div style={{ backgroundImage: `linear-gradient(rgba(36, 44, 55, 0.738), rgba(36, 44, 55, 0.823)), url(images/hero-bg.jpg),url('${`https://image.tmdb.org/t/p/original` + Details?.backdrop_path}}')`, backgroundSize: 'cover', backgroundPosition: 'center' }} className='w-screen min-h-screen xl:h-screen text-white p-5 md:p-10 xl:p-0 overoverflow-hidden' >
+            <div style={{ backgroundImage: `linear-gradient(rgba(36, 44, 55, 0.738), rgba(36, 44, 55, 0.823)),url('${`https://image.tmdb.org/t/p/original` + Details?.backdrop_path}}')`, backgroundSize: 'cover', backgroundPosition: 'center' }} className='w-screen min-h-screen xl:h-screen text-white p-5 md:p-10 xl:p-0 overoverflow-hidden' >
                 <div className={`container w-5/6 py-10 relative flex items-center h-full`}>
                     <div className="logo flex gap-3 items-center text-white absolute xl:top-10 top-0 left-0 text-xs md:text-sm container">
                         <Link to={'/'}>
